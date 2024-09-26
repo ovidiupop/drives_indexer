@@ -1,4 +1,5 @@
 # this class can be only imported
+import configparser
 import os
 import shutil
 import subprocess
@@ -13,11 +14,15 @@ from PyQt5.QtWidgets import QMessageBox, QTabWidget, QFileDialog, QApplication, 
 
 from mymodules import GDBModule as gdb
 
-VERSION = '1.0.0'
-ARCHITECTURE = 'amd64'
+config = configparser.ConfigParser()
+config_path = os.path.join(os.path.dirname(__file__), '..', 'config.ini')
+config.read(config_path)
 
-APP_NAME = 'Drives Indexer'
-DATABASE_NAME = 'drive-indexer.sqlite'
+# Citirea valorilor din fișierul de configurare
+VERSION = config.get('Application', 'VERSION')
+ARCHITECTURE = config.get('Application', 'ARCHITECTURE')
+APP_NAME = config.get('Application', 'APP_NAME')
+DATABASE_NAME = config.get('Application', 'DATABASE_NAME')
 DATABASE_DRIVER = 'QSQLITE'
 
 CSV_COLUMN_SEPARATOR = ','
