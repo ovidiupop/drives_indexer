@@ -1,0 +1,41 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# PyQt5 compiled resources
+resources.py
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Database files
+*.db
+
+# Temporary files
+*.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build directories
+build/
+dist/
+
+# Egg info
+*.egg-info/
+
+# Backup files
+*~
+*.bak
+
+# Media files (in case you have any in your project)
+*.mp4
+*.mkv
